@@ -1,0 +1,44 @@
+ngb-carousel .wrapper {
+    position: relative;
+    height: 0;
+    padding-top: 55%; /* Keep ratio for 900x500 images */
+  }
+  ngb-carousel .wrapper>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    top: -237px  !important;
+  }
+
+  
+  
+  .box-counter:hover {
+    box-shadow: 0 11px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  .box-counter{
+    margin-top: 60px;
+    text-align: center;
+    height: 176px;
+    width: 201px;
+  }
+.counter{
+  padding: 29px;
+  font-size: xxx-large;
+  color: cadetblue;
+}
+.box-counter-title{
+  font-size: x-large;
+    line-height: normal;
+    color: #576767;
+    font-family: cursive;
+    margin: 15px;
+}
+.fa {
+  margin-right: 10px;
+  color: cadetblue;
+}
+ 

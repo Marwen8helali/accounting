@@ -1,0 +1,111 @@
+<div class="container-fluid" >
+  
+    <div>
+      <div 
+      style="
+          background-color: rgb(144, 168, 218)  !important;
+          opacity: 25%;
+          font-family: emoji;
+          margin-left: 56px;
+          margin-top: -19px;
+          font-size: 25px;
+          position: absolute;
+          color: darkblue;
+          border:solid 1px black;
+          border-top-left-radius: 4px;
+      "> <h1> Account Plan </h1></div> 
+      <mat-grid-list style="margin: 25px; " cols="2" rowHeight="625px" gutterSize="5px">
+        
+        <mat-grid-tile>
+          <mat-grid-tile-header><h2>Create accounting account</h2></mat-grid-tile-header>
+          <div>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Company </mat-label>
+                  <input matInput disabled value="ComptaFlash">
+                </mat-form-field>
+              
+                <table class="example-full-width" cellspacing="0">
+                       <tr>
+                            <td><mat-form-field class="example-full-width">
+                                <mat-label>Number</mat-label>
+                                <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="">
+                                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><mat-form-field class="example-full-width">
+                                <mat-label>Wording</mat-label>
+                                <input matInput>
+                            </mat-form-field></td>
+                        </tr>
+                        <tr>
+                            <td><mat-form-field class="example-full-width">
+                                <mat-label> Accounting Key</mat-label>
+                                <input matInput>
+                            </mat-form-field></td>
+                       </tr>
+                   </table>
+                    <table class="example-full-width" cellspacing="0"><tr>
+                        <td>
+                            <mat-form-field style="    width: 400px;" appearance="fill">
+                                <mat-label>class</mat-label>
+                                <mat-select>
+                                <mat-option value="one">1 : Capital transactions and reserves</mat-option>
+                                <mat-option value="two">2 : fixed asset account</mat-option>
+                                <mat-option value="three">3 : Stocks and work in progress</mat-option>
+                                <mat-option value="four">4 : third party account</mat-option>
+                                <mat-option value="five">5 : financial and similar</mat-option>
+                                <mat-option value="sex">6 : Charge account</mat-option>
+                                <mat-option value="seven">7 : Product account</mat-option>
+                                <mat-option value="eight">8 : « Special » account</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <tr>
+                            <td>
+                                <mat-form-field style="    width: 400px;" appearance="fill">
+                                    <mat-label>Toppings</mat-label>
+                                    <mat-select [formControl]="toppings" multiple>
+                                    <mat-select-trigger>
+                                        {{toppings.value ? toppings.value[0] : ''}}
+                                        <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                                        (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                                        </span>
+                                    </mat-select-trigger>
+                                    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>critère d'apurement</h3>
+                                <mat-radio-group aria-label="Select an option">
+                                    <mat-radio-button style="margin-right: 15px;margin-left: 15px;" value="1">Apurement juridictionnel</mat-radio-button>
+                                    <mat-radio-button value="2">Apurement administratif </mat-radio-button>
+                                  </mat-radio-group>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button style=" 
+                                    margin-top: 20px;
+                                    border: solid 2px;
+                                    background: aliceblue;" mat-button color="primary">Save
+                                </button>
+                            </td>
+                        </tr>
+                    
+                    </table>
+              </form>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+     
+    </div>
+  
+  
+  
+  </div>

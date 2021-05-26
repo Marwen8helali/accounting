@@ -1,0 +1,54 @@
+
+<div class="container" >
+  
+    <div>
+      <div 
+      style="
+          background-color: rgb(144, 168, 218)  !important;
+          opacity: 25%;
+          font-family: emoji;
+          margin-left: 56px;
+          margin-top: -19px;
+          font-size: 25px;
+          position: absolute;
+          color: darkblue;
+          border:solid 1px black;
+          border-top-left-radius: 4px;
+      "> <h1> Référence comptable</h1></div> 
+      <mat-grid-list style="margin: 25px; " cols="2" rowHeight="200px" gutterSize="5px">
+        
+        <mat-grid-tile>
+          <mat-grid-tile-header><h2>Currency Catalog</h2></mat-grid-tile-header>
+          <app-currency></app-currency>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-grid-tile-header> <h1>Accounting Period</h1> </mat-grid-tile-header>
+          <div style="    display: flow-root; margin-top: 28px;width: 500px;">
+            <h2>Choice of accounting period</h2>
+            <app-date-range-picker></app-date-range-picker>
+          </div>
+         
+          
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-grid-tile-header>Tiers</mat-grid-tile-header>
+            <div style="    margin-top: 35px;width: 500px;">
+              <h2>Choise Tiers</h2> 
+              <app-tiers></app-tiers>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-grid-tile-header>Key of accounting</mat-grid-tile-header>
+          <div style="    margin-top: 35px;width: 500px;">
+            <h2>Enter the accounting key</h2> 
+            <app-key-comptable></app-key-comptable>
+          </div>
+        </mat-grid-tile>
+      
+      </mat-grid-list>
+     
+    </div>
+  
+  
+  
+  </div>

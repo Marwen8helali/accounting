@@ -1,0 +1,11 @@
+.mat-grid-tile{
+    background-color:rgb(252, 252, 253);
+    margin: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 1px solid;
+}
+.mat-grid-tile-header{
+    background-color: rgb(144, 168, 218)  !important;
+    opacity: 25%;
+}

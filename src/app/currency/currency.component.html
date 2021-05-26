@@ -1,0 +1,122 @@
+<div >
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-basic-title">All currency options in the world</h2>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div style="height:500px;overflow-y:auto;" class="modal-body">
+      <table class="table">
+        <tbody>
+          <tr *ngFor= "let inf of countries; let index = index">
+            <th scope="row">
+              <div style="display: flex;">
+                <div style="    margin-right: 90px;"><img style="margin-top: -3px;" src="{{countries[index][0].flag}}" width="20" height="15" >
+                  <span title="{{countries[index][0].CountryName}}"> | {{countries[index][0].CountryName | slice:0:15 }} </span>
+                </div>
+              </div>
+            </th>
+            <td>{{countries[index][0].code}}</td>
+            <td>{{countries[index][0].rate | number }}</td>
+            <button (click)="CurrencyChoix(index)" style="display: inline; height: 45px;border: transparent;margin-top: 0px;width: 482px;position: absolute;margin-left: -465px;background: transparent;" type="button" class="btn btn-info btn-sm"></button>
+           </tr>
+        </tbody>
+      </table>
+    </div>  
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    </div>
+  </ng-template>
+<div><button style=" height: 38px;margin-top: 52px;margin-left: -100px;" class="btn btn-lg btn-outline-info" (click)="open(content)">All Currency Choices</button>
+<button style="margin-top: 50px;margin-left: 7px;" type="button" class="btn btn-success">Most used</button></div>
+
+</div>
+
+    <!--test
+    <div style="margin-top: 15px;width: 550px" >
+        <div class="dropdown" >
+            <button style=" margin-left: 73px;margin-bottom: 7px;" class="btn btn-success 
+                    dropdown-toggle" type="button" 
+                    id="dropdownMenuButton" 
+                    data-toggle="dropdown"
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Currency choice
+            </button>
+           
+    <div>
+            <ul  (click)="CurrencyChoice()" class="dropdown-menu" 
+                aria-labelledby="dropdownMenuButton" 
+                style=" height: 200px;width: 490px; overflow: auto">
+                <li data-live-search="true" class="dropdown-item" *ngFor= "let inf of countries; let index = index">
+                  <div style="display: flex;">
+                    <div style="    margin-right: 90px;"><img style="margin-top: -3px;" src="{{countries[index][0].flag}}"
+                    width="20" height="15" >
+                    <span title="{{countries[index][0].CountryName}}"> | {{countries[index][0].CountryName | slice:0:15 }} </span></div>
+                    <div style="display: flex;"><div style="margin: auto;"><span style="    width: 50px;
+                      
+        margin-left: 55px;
+        padding-right: 0px;
+        padding-left: 25px;
+        margin-right: 5px;
+        font-family: cursive;
+        align-content: center;;" title="{{countries[index][0].CurrencyName}}"> {{countries[index][0].code}} </span></div>
+                    <div><span style="
+                    padding-right: 40px;
+                    padding-left: 40px;
+                    margin-right: 40px;
+                    font-family: cursive;
+                    align-content: center;"> {{countries[index][0].rate | number }} </span></div>
+                    <div style="margin-left: 200px;
+                    position: absolute;"><button (click)="CurrencyChoix(index)" style="display: inline; height: 30px;border: transparent;
+        margin-top: -3px;
+        width: 485px;
+        margin-left: -496px;
+        background: transparent;" type="button" class="btn btn-info btn-sm"></button></div>
+                  </div>
+                  </div>
+                    
+                    
+                  </li>
+                  
+            </ul></div>
+            
+        </div> 
+    
+    
+     
+     
+    
+    </div>--><!--<ng-template #elseBlock>{{}}}</ng-template>;-->
+    <table style="width: 197%;margin-top: 5px;margin-left: -100px;" class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">CountryName</th>
+          <th scope="col">CurrencyName</th>
+          <th scope="col">Code</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="currencyIndexName; else elseBlock">
+          <th scope="row"><img style="margin-top: -4px;" src="{{currencyIndexflag}}"
+            width="20" height="15" ></th>
+          <td>{{currencyIndexName}}</td>
+          <td>{{currencyIndexCName}}</td>
+          <td>{{currencyIndexSymbole}}</td>
+          <td>{{currencyIndexRate | number}}</td>
+        </tr>
+      </tbody>
+      <ng-template #elseBlock>
+        <th scope="row"><img style="margin-top: -3px;" src="https://restcountries.eu/data/usa.svg"
+          width="20" height="15" ></th>
+        <td>United State</td>
+        <td>Dollar</td>
+        <td>USD</td>
+        <td>1</td>
+      </ng-template>
+    </table>
+
+  
